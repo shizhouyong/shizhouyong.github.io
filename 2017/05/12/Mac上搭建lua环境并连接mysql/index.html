@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>施周勇的博客</title>
+  <title>Mac上搭建lua环境并连接mysql | 施周勇的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个装逼男的世界">
-<meta property="og:type" content="website">
-<meta property="og:title" content="施周勇的博客">
-<meta property="og:url" content="https://shizhouyong.github.io/index.html">
+  <meta name="description" content="Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。(以上摘抄自菜鸟教程) 鉴于Lua的诸多优势，我想在接下来的开发中应用Lua去完成一些需要脚本实现的工作。本文将记录我在Mac上搭建Lua的开发环境搭建以及实现对mysql的数据库访问。 1. Lua安装源码编译安装12345curl -R -O http">
+<meta name="keywords" content="lua">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac上搭建lua环境并连接mysql">
+<meta property="og:url" content="https://shizhouyong.github.io/2017/05/12/Mac上搭建lua环境并连接mysql/index.html">
 <meta property="og:site_name" content="施周勇的博客">
-<meta property="og:description" content="一个装逼男的世界">
+<meta property="og:description" content="Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。(以上摘抄自菜鸟教程) 鉴于Lua的诸多优势，我想在接下来的开发中应用Lua去完成一些需要脚本实现的工作。本文将记录我在Mac上搭建Lua的开发环境搭建以及实现对mysql的数据库访问。 1. Lua安装源码编译安装12345curl -R -O http">
+<meta property="og:updated_time" content="2017-05-12T12:26:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="施周勇的博客">
-<meta name="twitter:description" content="一个装逼男的世界">
+<meta name="twitter:title" content="Mac上搭建lua环境并连接mysql">
+<meta name="twitter:description" content="Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。(以上摘抄自菜鸟教程) 鉴于Lua的诸多优势，我想在接下来的开发中应用Lua去完成一些需要脚本实现的工作。本文将记录我在Mac上搭建Lua的开发环境搭建以及实现对mysql的数据库访问。 1. Lua安装源码编译安装12345curl -R -O http">
   
     <link rel="alternate" href="/atom.xml" title="施周勇的博客" type="application/atom+xml">
   
@@ -66,9 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Mac上搭建lua环境并连接mysql" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Mac上搭建lua环境并连接mysql" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/05/12/Mac上搭建lua环境并连接mysql/" class="article-date">
   <time datetime="2017-05-12T11:21:40.000Z" itemprop="datePublished">2017-05-12</time>
@@ -81,8 +81,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/12/Mac上搭建lua环境并连接mysql/">Mac上搭建lua环境并连接mysql</a>
+    <h1 class="article-title" itemprop="name">
+      Mac上搭建lua环境并连接mysql
     </h1>
   
 
@@ -122,92 +122,23 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/25/hello-world/" class="article-date">
-  <time datetime="2017-04-25T05:02:55.000Z" itemprop="datePublished">2017-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2017/04/25/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/25/hello-world/">Hexo 博客发布命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://shizhouyong.github.io/2017/04/25/hello-world/" data-id="cj2ltg5wn0003w0dhdojv6v50" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/25/我的第一篇博客/" class="article-date">
-  <time datetime="2017-04-25T04:56:52.000Z" itemprop="datePublished">2017-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          Hexo 博客发布命令
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/25/我的第一篇博客/">我的第一篇博客</a>
-    </h1>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>你好，欢迎来到我的博客！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://shizhouyong.github.io/2017/04/25/我的第一篇博客/" data-id="cj2ltg5wh0001w0dh8efacyne" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
